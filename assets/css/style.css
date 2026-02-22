@@ -322,14 +322,18 @@ p {
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 12px;
   text-decoration: none;
   flex-shrink: 0;
 }
 
-.nav-logo img {
-  height: 40px;
+.nav-logo-img {
+  height: 52px;
   width: auto;
+  transition: opacity var(--transition);
+}
+
+.nav-logo-img:hover {
+  opacity: 0.85;
 }
 
 .nav-logo-text {
@@ -713,6 +717,90 @@ p {
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 40px;
+}
+
+/* Hero logo — large, centered, glowing */
+.hero-logo {
+  width: clamp(220px, 30vw, 340px);
+  height: auto;
+  margin: 0 auto 32px;
+  display: block;
+  filter: drop-shadow(0 0 40px rgba(45, 212, 191, 0.25))
+    drop-shadow(0 0 80px rgba(45, 212, 191, 0.1));
+  animation: hero-logo-in 1.2s ease-out;
+}
+
+@keyframes hero-logo-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Hero watermark — large faded logo behind content */
+.hero-watermark {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-watermark img {
+  width: clamp(500px, 60vw, 900px);
+  height: auto;
+  opacity: 0.03;
+  filter: blur(1px);
+}
+
+/* CTA section watermark */
+.cta-watermark {
+  position: absolute;
+  right: -60px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.cta-watermark img {
+  width: 240px;
+  height: auto;
+  opacity: 0.06;
+}
+
+/* Blog card logo images */
+.blog-card-logo {
+  width: 55%;
+  height: auto;
+  opacity: 0.25;
+  transition: opacity var(--transition);
+}
+
+.blog-card:hover .blog-card-logo {
+  opacity: 0.35;
+}
+
+/* About page logo showcase */
+.about-logo-showcase {
+  text-align: center;
+  padding: 48px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+}
+
+.about-logo-showcase img {
+  width: clamp(200px, 40vw, 320px);
+  height: auto;
+  margin: 0 auto;
+  display: block;
 }
 
 /* Physics canvas overlay */
@@ -1543,12 +1631,16 @@ p {
   max-width: 280px;
 }
 
-.footer-brand .nav-logo {
+.footer-logo-img {
+  height: auto;
+  width: 200px;
   margin-bottom: 8px;
+  opacity: 0.9;
+  transition: opacity var(--transition);
 }
 
-.footer-brand .nav-logo-text {
-  color: var(--text);
+.footer-logo-img:hover {
+  opacity: 1;
 }
 
 .footer h4 {
@@ -2399,6 +2491,11 @@ p {
     display: none;
   }
 
+  /* Nav logo */
+  .nav-logo-img {
+    height: 42px;
+  }
+
   /* Hero */
   .hero {
     min-height: auto;
@@ -2409,6 +2506,15 @@ p {
     font-size: clamp(2rem, 8vw, 2.75rem);
   }
 
+  .hero-logo {
+    width: clamp(180px, 50vw, 260px);
+    margin-bottom: 24px;
+  }
+
+  .hero-watermark img {
+    width: 80vw;
+  }
+
   .hero-actions {
     flex-direction: column;
     align-items: center;
@@ -2417,6 +2523,16 @@ p {
   .hero-actions .btn {
     width: 100%;
     max-width: 300px;
+  }
+
+  /* CTA watermark hidden on mobile */
+  .cta-watermark {
+    display: none;
+  }
+
+  /* Footer logo */
+  .footer-logo-img {
+    width: 160px;
   }
 
   /* Grids */
