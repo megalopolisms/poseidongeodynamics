@@ -23,18 +23,18 @@
     LABEL_FONT: '500 9px "JetBrains Mono", monospace',
   };
 
-  // Brand colors
+  // Brand colors (dark theme — bright on dark bg)
   var COLORS = {
-    oceanDeep: "#1a3a5c",
-    oceanMid: "#2a5a8c",
-    oceanLight: "#3a7abd",
-    teal: "#2da8a0",
-    tealBright: "#34c5bb",
-    gold: "#c9a84c",
-    goldBright: "#dbbf6a",
-    border: "#e5e7eb",
+    oceanDeep: "#5eaaff",
+    oceanMid: "#7bbfff",
+    oceanLight: "#93d1ff",
+    teal: "#2dd4bf",
+    tealBright: "#5eead4",
+    gold: "#f0c040",
+    goldBright: "#fcd34d",
+    border: "rgba(255,255,255,0.15)",
     white: "#ffffff",
-    subtle: "#f7f8fa",
+    subtle: "rgba(255,255,255,0.06)",
   };
 
   // Object types representing helical pile components
@@ -747,7 +747,7 @@
     // Inner circle
     ctx.beginPath();
     ctx.arc(0, 0, r * 0.45, 0, Math.PI * 2);
-    ctx.strokeStyle = "rgba(26,58,92,0.3)";
+    ctx.strokeStyle = "rgba(94,170,255,0.3)";
     ctx.lineWidth = 1;
     ctx.stroke();
   }
