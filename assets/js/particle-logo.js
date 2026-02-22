@@ -57,7 +57,7 @@
         // Calculate scaling to center the particle logo
         const scaleX = width / offscreen.width;
         const scaleY = height / offscreen.height;
-        const scale = Math.min(scaleX, scaleY) * 0.8; 
+        const scale = Math.min(scaleX, scaleY); 
         
         const offsetX = (width - offscreen.width * scale) / 2;
         const offsetY = (height - offscreen.height * scale) / 2;

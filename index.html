@@ -48,12 +48,18 @@
       }
     </script>
     <style>
-        /* Custom physics canvas overlay if needed */
+        /* Custom physics canvas overlay */
         #physics-canvas {
             position: absolute;
             inset: 0;
-            z-index: 0;
+            z-index: 1;
+            pointer-events: auto;
+        }
+        .hero-content {
             pointer-events: none;
+        }
+        .hero-content * {
+            pointer-events: auto;
         }
     </style>
 </head>
@@ -87,8 +93,13 @@
         </div>
         <canvas id="physics-canvas"></canvas>
         
-        <div class="relative z-10 text-center max-w-4xl mx-auto px-6 pt-12 pb-24">
-            <canvas id="logo-canvas" class="w-64 h-64 md:w-80 md:h-80 mx-auto mb-6 cursor-crosshair drop-shadow-[0_0_30px_rgba(45,212,191,0.4)]"></canvas>
+        <div class="hero-content relative z-10 text-center max-w-4xl mx-auto px-6 pt-12 pb-24">
+            <div class="relative inline-block mx-auto mb-6 w-64 md:w-80">
+                <!-- Particle Canvas Background -->
+                <canvas id="logo-canvas" class="absolute inset-0 w-full h-full cursor-crosshair drop-shadow-[0_0_30px_rgba(45,212,191,0.5)]"></canvas>
+                <!-- Crisp Static Logo Foreground -->
+                <img src="assets/poseidon-teal.png" alt="Poseidon Geodynamics Logo" class="relative z-10 w-full h-auto pointer-events-none">
+            </div>
             
             <div class="flex gap-4 justify-center mb-8">
                 <button id="gravity-btn" class="px-4 py-1.5 text-sm font-mono text-gray-400 border border-white/10 rounded-full hover:text-teal hover:border-teal/30 transition-colors">Activate Gravity</button>
