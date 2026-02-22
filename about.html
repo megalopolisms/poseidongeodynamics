@@ -62,7 +62,7 @@
                 <img src="assets/poseidon-white.png" alt="Poseidon Geodynamics" class="h-12 w-auto hover:opacity-80 transition-opacity">
             </a>
             <div class="hidden md:flex items-center gap-6">
-                <a href="about.html" class="text-gray-300 hover:text-white font-medium transition-colors">About</a>
+                <a href="about.html" class="text-teal font-semibold transition-colors">About</a>
                 <a href="services.html" class="text-gray-300 hover:text-white font-medium transition-colors">Services</a>
                 <a href="products.html" class="text-gray-300 hover:text-white font-medium transition-colors">Products</a>
                 <a href="calculator.html" class="text-gray-300 hover:text-white font-medium transition-colors">Calculator</a>
@@ -352,17 +352,23 @@
     </section>
 
 
-    <!-- ─── CTA Section ─── -->
-    <section class="cta-section">
-        <div class="container" style="position: relative;">
-            <div class="cta-watermark">
-                <img src="assets/poseidon-gold.png" alt="">
-            </div>
-            <h2>Ready to Build on Solid Ground?</h2>
-            <p>Contact us for a free project assessment and quote. We respond within 24 hours.</p>
-            <div class="btn-group">
-                <a href="contact.html" class="btn btn-white btn-lg">Get a Quote</a>
-                <a href="calculator.html" class="btn btn-outline-white btn-lg">Try the Calculator</a>
+        <!-- ─── CTA Section ─── -->
+    <section class="py-24 bg-ocean-deep relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxjaXJjbGUgY3g9IjMiIGN5PSIzIiByPSIzIiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz48L2c+PC9zdmc+')] opacity-50"></div>
+        <div class="absolute -right-20 top-1/2 -translate-y-1/2 opacity-5 pointer-events-none">
+            <img src="assets/poseidon-white.png" alt="" class="w-96">
+        </div>
+        <div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">Ready to Build on Solid Ground?</h2>
+            <p class="text-xl text-ocean-light mb-10">Contact us for a free project assessment and quote. We respond within 24 hours.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="contact.html" class="inline-flex items-center gap-2 px-8 py-4 bg-gold hover:bg-gold-bright text-charcoal font-bold rounded-lg shadow-xl shadow-gold/20 transition-all hover:-translate-y-1">
+                    Get a Quote
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
+                <a href="calculator.html" class="inline-flex items-center gap-2 px-8 py-4 bg-transparent border border-white/30 text-white hover:bg-white/10 font-bold rounded-lg transition-all hover:-translate-y-1">
+                    Try the Calculator
+                </a>
             </div>
         </div>
     </section>
