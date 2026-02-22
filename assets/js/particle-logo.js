@@ -172,6 +172,7 @@
 
     function update() {
         ctx.clearRect(0, 0, width, height);
+        let time = performance.now() * 0.001;
 
         // Lighter blend mode makes overlapping particles glow brightly
         ctx.globalCompositeOperation = "lighter";
@@ -201,9 +202,11 @@
                 p.vx += dx * SPRING;
                 p.vy += dy * SPRING;
                 
-                // Add slight wandering force for a "live aura" effect
-                p.vx += (Math.random() - 0.5) * 0.4;
-                p.vy += (Math.random() - 0.5) * 0.4;
+                // Add dynamic flowing force for a more active "live aura" effect
+                let flowX = Math.sin(time * 2 + p.oy * 0.02) * 1.5;
+                let flowY = Math.cos(time * 2 + p.ox * 0.02) * 1.5;
+                p.vx += flowX + (Math.random() - 0.5) * 1.2;
+                p.vy += flowY + (Math.random() - 0.5) * 1.2;
             }
 
             // Mouse repulsion
