@@ -14,14 +14,14 @@
     let particles = [];
     let width, height;
     let gravityOn = false;
-    let mouse = { x: -1000, y: -1000, radius: 40 };
+    let mouse = { x: -1000, y: -1000, radius: 50 }; // Moderate radius for interaction
 
     // Physics constants
-    const SPRING = 0.08;
-    const DAMPING = 0.90;
+    const SPRING = 0.15; // Much tighter spring so the shape holds together firmly
+    const DAMPING = 0.85;
     const GRAVITY = 0.8;
-    const BOUNCE = -0.75;
-    const PARTICLE_SIZE = 1.5;
+    const BOUNCE = -0.6;
+    const PARTICLE_SIZE = 1.8; // Slightly larger for better visibility
     const SPACING = 4; // grid spacing for pixel sampling
 
     // Load Image
@@ -30,7 +30,7 @@
     img.onload = initParticles;
 
     function initParticles() {
-        // Set canvas size (visual size is controlled by CSS)
+        // Set canvas size
         width = canvas.clientWidth;
         height = canvas.clientHeight;
         
@@ -44,7 +44,7 @@
         const offscreen = document.createElement("canvas");
         const offCtx = offscreen.getContext("2d");
         
-        // Target size for sampling (determines number of particles)
+        // Target size for sampling
         const sampleSize = 80; 
         const aspect = img.height / img.width;
         
@@ -54,10 +54,10 @@
         offCtx.drawImage(img, 0, 0, offscreen.width, offscreen.height);
         const imgData = offCtx.getImageData(0, 0, offscreen.width, offscreen.height).data;
 
-        // Calculate scaling to center the particle logo in the main canvas
+        // Calculate scaling to center the particle logo
         const scaleX = width / offscreen.width;
         const scaleY = height / offscreen.height;
-        const scale = Math.min(scaleX, scaleY) * 0.8; // 80% of canvas size
+        const scale = Math.min(scaleX, scaleY) * 0.8; 
         
         const offsetX = (width - offscreen.width * scale) / 2;
         const offsetY = (height - offscreen.height * scale) / 2;
@@ -72,18 +72,29 @@
                 
                 // If pixel is mostly opaque
                 if (alpha > 128) {
-                    const r = imgData[idx];
-                    const g = imgData[idx + 1];
-                    const b = imgData[idx + 2];
+                    // Create a shiny/glowing effect by injecting bright teal, gold, and white
+                    let r = 57, g = 204, b = 195; // Bright Teal base (#39ccc3)
                     
+                    const rand = Math.random();
+                    if (rand > 0.95) {
+                        // Rare Gold sparkle
+                        r = 252; g = 211; b = 77;
+                    } else if (rand > 0.85) {
+                        // Occasional White sparkle
+                        r = 255; g = 255; b = 255;
+                    } else if (rand > 0.70) {
+                        // Lighter Ocean Blue for depth
+                        r = 147; g = 209; b = 255;
+                    }
+
                     const targetX = offsetX + x * scale;
                     const targetY = offsetY + y * scale;
 
                     particles.push({
                         ox: targetX,
                         oy: targetY,
-                        x: targetX + (Math.random() - 0.5) * 50, // Slight initial scatter
-                        y: targetY + (Math.random() - 0.5) * 50,
+                        x: targetX + (Math.random() - 0.5) * 10, // Very slight initial scatter
+                        y: targetY + (Math.random() - 0.5) * 10,
                         vx: 0,
                         vy: 0,
                         color: `rgba(${r}, ${g}, ${b}, ${alpha / 255})`
@@ -135,10 +146,10 @@
                 btnFloat.classList.remove("bg-teal/10");
             }
 
-            // Scatter on drop
+            // Gentle scatter on drop so it doesn't look like an explosion
             particles.forEach(p => {
-                p.vx += (Math.random() - 0.5) * 30;
-                p.vy += Math.random() * -15;
+                p.vx += (Math.random() - 0.5) * 8;
+                p.vy += Math.random() * -3;
             });
         });
     }
@@ -160,6 +171,9 @@
 
     function update() {
         ctx.clearRect(0, 0, width, height);
+
+        // Lighter blend mode makes overlapping particles glow brightly
+        ctx.globalCompositeOperation = "lighter";
 
         for (let i = 0; i < particles.length; i++) {
             let p = particles[i];
@@ -194,8 +208,8 @@
             
             if (dist < mouse.radius) {
                 let force = (mouse.radius - dist) / mouse.radius;
-                // Stronger repulsion if gravity is off to maintain shape disturbance
-                let repelStrength = gravityOn ? 5 : 25; 
+                // Softer repel strength so the shape bends but doesn't break
+                let repelStrength = gravityOn ? 2 : 4; 
                 p.vx += (mdx / dist) * force * repelStrength;
                 p.vy += (mdy / dist) * force * repelStrength;
             }
@@ -213,6 +227,9 @@
             ctx.arc(p.x, p.y, PARTICLE_SIZE, 0, Math.PI * 2);
             ctx.fill();
         }
+
+        // Reset blend mode
+        ctx.globalCompositeOperation = "source-over";
 
         requestAnimationFrame(update);
     }
