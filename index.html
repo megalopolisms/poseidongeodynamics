@@ -106,12 +106,25 @@
         
         <div class="hero-content relative z-10 max-w-screen-2xl mx-auto px-6 pt-16 pb-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <!-- Left Side: Massive Logo -->
-            <div class="flex justify-center lg:justify-end w-full">
+            <div class="flex flex-col justify-center lg:justify-end w-full">
                 <div class="relative w-full max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-4xl">
                     <!-- Particle Canvas Background -->
                     <canvas id="logo-canvas" class="absolute inset-0 w-full h-full cursor-crosshair drop-shadow-[0_0_40px_rgba(45,212,191,0.6)]"></canvas>
                     <!-- Crisp Static Logo Foreground -->
                     <img src="assets/poseidon-teal.png" alt="Poseidon Geodynamics Logo" class="relative z-10 w-full h-auto object-contain pointer-events-none animate-nuclear-glow">
+                </div>
+                
+                <!-- Memberships -->
+                <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 mt-6 lg:mt-8 opacity-60 hover:opacity-100 transition-opacity duration-500 z-10 w-full max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-4xl">
+                    <a href="https://steeltubeinstitute.org/" target="_blank" rel="noopener" title="Steel Tube Institute Member" class="flex items-center hover:scale-105 transition-transform">
+                        <img src="https://steeltubeinstitute.org/wp-content/uploads/2020/04/steeltube-logo.svg" alt="Steel Tube Institute Member" class="h-6 md:h-8 brightness-0 invert">
+                    </a>
+                    <a href="https://www.concrete.org/" target="_blank" rel="noopener" title="ACI Member" class="flex items-center hover:scale-105 transition-transform">
+                        <img src="https://www.concrete.org/Portals/0/Files/Images/aci-logo.png?ver=4zlNeGQSk91DBd4KXf0y3w%3d%3d" alt="American Concrete Institute Member" class="h-8 md:h-10 brightness-0 invert">
+                    </a>
+                    <a href="https://www.msboc.us/" target="_blank" rel="noopener" title="MSBOC Licensed Contractor" class="flex items-center hover:scale-105 transition-transform">
+                        <img src="https://www.msboc.us/wp-content/themes/msboc_theme/images/msboc-logo.jpg" alt="Mississippi State Board of Contractors" class="h-10 md:h-12 invert grayscale mix-blend-screen">
+                    </a>
                 </div>
             </div>
             
@@ -329,17 +342,7 @@
                 </div>
             </div>
             <div class="border-t border-white/10 pt-8 flex flex-col items-center gap-8">
-                <div class="flex flex-wrap justify-center items-center gap-12 opacity-40 hover:opacity-100 transition-opacity duration-500">
-                    <a href="https://steeltubeinstitute.org/" target="_blank" rel="noopener" title="Steel Tube Institute Member" class="flex items-center">
-                        <img src="https://steeltubeinstitute.org/wp-content/uploads/2020/04/steeltube-logo.svg" alt="Steel Tube Institute Member" class="h-6 md:h-8 brightness-0 invert">
-                    </a>
-                    <a href="https://www.concrete.org/" target="_blank" rel="noopener" title="ACI Member" class="flex items-center">
-                        <img src="https://www.concrete.org/Portals/0/Files/Images/aci-logo.png?ver=4zlNeGQSk91DBd4KXf0y3w%3d%3d" alt="American Concrete Institute Member" class="h-8 md:h-10 brightness-0 invert">
-                    </a>
-                    <a href="https://www.msboc.us/" target="_blank" rel="noopener" title="MSBOC Licensed Contractor" class="flex items-center">
-                        <img src="https://www.msboc.us/wp-content/themes/msboc_theme/images/msboc-logo.jpg" alt="Mississippi State Board of Contractors" class="h-10 md:h-12 invert grayscale mix-blend-screen">
-                    </a>
-                </div>
+                
                 <div class="flex flex-col md:flex-row items-center justify-between w-full gap-4 text-xs text-gray-500 mt-2">
                     <p>&copy; 2026 Poseidon Geodynamics LLC. All rights reserved.</p>
                     <p class="font-mono text-[10px] tracking-widest text-gray-500 uppercase">R&amp;I by Symbiotic Fluid &amp; astrodynamics</p>
