@@ -45,7 +45,7 @@
         const offCtx = offscreen.getContext("2d");
         
         // Target size for sampling
-        const sampleSize = 80; 
+        const sampleSize = 100; 
         const aspect = img.height / img.width;
         
         offscreen.width = sampleSize;
@@ -57,7 +57,8 @@
         // Calculate scaling to center the particle logo
         const scaleX = width / offscreen.width;
         const scaleY = height / offscreen.height;
-        const scale = Math.min(scaleX, scaleY); 
+        const baseScale = Math.min(scaleX, scaleY);
+        const scale = baseScale * 1.05; // Slightly larger to act as an outline/aura
         
         const offsetX = (width - offscreen.width * scale) / 2;
         const offsetY = (height - offscreen.height * scale) / 2;
@@ -199,6 +200,10 @@
                 let dy = p.oy - p.y;
                 p.vx += dx * SPRING;
                 p.vy += dy * SPRING;
+                
+                // Add slight wandering force for a "live aura" effect
+                p.vx += (Math.random() - 0.5) * 0.4;
+                p.vy += (Math.random() - 0.5) * 0.4;
             }
 
             // Mouse repulsion
