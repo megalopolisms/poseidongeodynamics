@@ -59,15 +59,22 @@
                 const alpha = imgData[idx + 3];
                 
                 if (alpha > 128) {
-                    let r = 57, g = 204, b = 195; // Bright Teal
+                    let r = 57, g = 255, b = 20; // Neon Green Base
+                    let size = PARTICLE_SIZE;
+                    let speedVar = 1.0;
                     
                     const rand = Math.random();
                     if (rand > 0.95) {
-                        r = 252; g = 211; b = 77; // Gold
-                    } else if (rand > 0.85) {
-                        r = 255; g = 255; b = 255; // White
-                    } else if (rand > 0.70) {
-                        r = 147; g = 209; b = 255; // Ocean Blue
+                        r = 255; g = 255; b = 255; // White hot core spark
+                        size = PARTICLE_SIZE * 1.5;
+                        speedVar = 2.0;
+                    } else if (rand > 0.80) {
+                        r = 173; g = 255; b = 47; // Yellow-Green (Lime)
+                        size = PARTICLE_SIZE * 1.2;
+                        speedVar = 1.5;
+                    } else if (rand > 0.60) {
+                        r = 0; g = 200; b = 0; // Deeper Green
+                        speedVar = 0.8;
                     }
 
                     const targetX = offsetX + x * scale;
@@ -75,6 +82,7 @@
 
                     // Add a random offset factor to create individual rhythmic offset
                     const randomPhase = Math.random() * Math.PI * 2;
+                    const randomPulseSpeed = 1 + Math.random() * 2; // Individual glow rate
 
                     particles.push({
                         ox: targetX,
@@ -84,10 +92,13 @@
                         vx: 0,
                         vy: 0,
                         phase: randomPhase,
+                        pulseSpeed: randomPulseSpeed,
                         r: r,
                         g: g,
                         b: b,
-                        baseAlpha: alpha / 255
+                        baseAlpha: alpha / 255,
+                        size: size,
+                        speedVar: speedVar
                     });
                 }
             }
@@ -133,8 +144,8 @@
             let dy = p.oy - p.y;
             
             // Impressive fluid breathing rhythm
-            let pulseX = Math.sin(time + p.oy * 0.05 + p.phase) * 1.5;
-            let pulseY = Math.cos(time + p.ox * 0.05 + p.phase) * 1.5;
+            let pulseX = Math.sin(time * p.speedVar + p.oy * 0.05 + p.phase) * 1.5;
+            let pulseY = Math.cos(time * p.speedVar + p.ox * 0.05 + p.phase) * 1.5;
             
             // Apply spring to return to origin, plus the pulse
             p.vx += dx * SPRING + pulseX;
@@ -161,10 +172,10 @@
             p.y += p.vy;
 
             // Render with dynamic back-and-forth glow
-            let glowAlpha = Math.max(0, p.baseAlpha * (0.3 + 0.7 * Math.sin(time * 3 + p.phase)));
+            let glowAlpha = Math.max(0, p.baseAlpha * (0.2 + 0.8 * Math.sin(time * p.pulseSpeed + p.phase)));
             ctx.fillStyle = `rgba(${p.r}, ${p.g}, ${p.b}, ${glowAlpha})`;
             ctx.beginPath();
-            ctx.arc(p.x, p.y, PARTICLE_SIZE, 0, Math.PI * 2);
+            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
             ctx.fill();
         }
 
