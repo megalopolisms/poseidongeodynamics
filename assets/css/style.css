@@ -5,30 +5,30 @@
 
 /* ─── Design Tokens ─── */
 :root {
-  /* Backgrounds — Dark Theme */
-  --bg: #060610;
-  --bg-subtle: #0c0c1a;
-  --bg-card: #10101f;
-  --bg-glass: rgba(6, 6, 16, 0.85);
-  --bg-elevated: #14142a;
+  /* Backgrounds — Dark Theme (Charcoal based) */
+  --bg: #1e1e2e;
+  --bg-subtle: #171724;
+  --bg-card: #252538;
+  --bg-glass: rgba(30, 30, 46, 0.85);
+  --bg-elevated: #2a2a3f;
 
-  /* Brand Colors — Brighter for dark bg */
-  --ocean-deep: #5eaaff;
-  --ocean-mid: #7bbfff;
-  --ocean-light: #9dd4ff;
-  --teal: #2dd4bf;
-  --teal-bright: #5eead4;
-  --teal-glow: rgba(45, 212, 191, 0.12);
-  --gold: #f0c040;
-  --gold-bright: #fcd34d;
-  --gold-glow: rgba(240, 192, 64, 0.1);
-  --charcoal: #040408;
+  /* Brand Colors — MCP Guidelines */
+  --ocean-deep: #1a3a5c;
+  --ocean-mid: #255282;
+  --ocean-light: #3470b0;
+  --teal: #2da8a0;
+  --teal-bright: #39ccc3;
+  --teal-glow: rgba(45, 168, 160, 0.15);
+  --gold: #c9a84c;
+  --gold-bright: #dec16b;
+  --gold-glow: rgba(201, 168, 76, 0.15);
+  --charcoal: #1e1e2e;
 
-  /* Text — Light on Dark */
-  --text: #e8e8f0;
-  --text-secondary: #a1a1b5;
-  --text-muted: #5a5a70;
-  --text-inverse: #060610;
+  /* Text — Light on Dark (Off-white based) */
+  --text: #f7f8fa;
+  --text-secondary: #c0c4cc;
+  --text-muted: #8a8d99;
+  --text-inverse: #1e1e2e;
 
   /* Borders & Shadows */
   --border: rgba(255, 255, 255, 0.07);

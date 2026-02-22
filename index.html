@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" class="scroll-smooth">
 <head>
     <!-- Encoding & Viewport -->
     <meta charset="UTF-8">
@@ -11,440 +11,308 @@
     <meta name="description" content="Poseidon Geodynamics manufactures and installs helical pile foundations for residential, commercial, and industrial projects across the Gulf Coast. 30-50% cost savings vs traditional deep foundations.">
     <meta name="keywords" content="helical piles, screw piles, foundation engineering, Biloxi Mississippi, Gulf Coast, deep foundations, helical pile manufacturer">
 
-    <!-- SEO & Robots -->
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    <meta name="language" content="en-US">
-    <meta name="author" content="Poseidon Geodynamics LLC">
+    <!-- SEO & Favicons -->
     <link rel="canonical" href="https://poseidongeodynamics.com/">
-
-    <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
-    <!-- Web Manifest & Browser Config -->
-    <link rel="manifest" href="/site.webmanifest">
-    <meta name="theme-color" content="#0d1b2a">
-    <meta name="color-scheme" content="dark light">
-    <meta name="msapplication-config" content="/browserconfig.xml">
-    <meta name="msapplication-TileColor" content="#0d1b2a">
-    <meta name="msapplication-TileImage" content="/assets/mstile-144x144.png">
-
-    <!-- Apple Mobile -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Poseidon">
-    <meta name="format-detection" content="telephone=yes">
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="business.business">
-    <meta property="og:title" content="Poseidon Geodynamics — Engineered Helical Pile Foundations">
-    <meta property="og:description" content="Helical pile manufacturing, installation, and foundation engineering for the Gulf Coast and beyond. 30-50% cost savings vs traditional deep foundations.">
-    <meta property="og:url" content="https://poseidongeodynamics.com/">
-    <meta property="og:image" content="https://poseidongeodynamics.com/assets/og-image.jpg">
-    <meta property="og:image:alt" content="Poseidon Geodynamics trident logo — Engineered Foundations">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:site_name" content="Poseidon Geodynamics">
-    <meta property="og:locale" content="en_US">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Poseidon Geodynamics — Engineered Helical Pile Foundations">
-    <meta name="twitter:description" content="Helical pile manufacturing, installation, and foundation engineering for the Gulf Coast. 30-50% cost savings.">
-    <meta name="twitter:image" content="https://poseidongeodynamics.com/assets/og-image.jpg">
-    <meta name="twitter:image:alt" content="Poseidon Geodynamics trident logo — Engineered Foundations">
+    <meta name="theme-color" content="#1e1e2e">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="assets/css/style.css">
-
-    <!-- Structured Data: HomeAndConstructionBusiness -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "HomeAndConstructionBusiness",
-        "name": "Poseidon Geodynamics LLC",
-        "description": "Helical pile manufacturing, installation, and foundation engineering for residential, commercial, and industrial applications.",
-        "url": "https://poseidongeodynamics.com",
-        "telephone": "+1-305-504-1323",
-        "email": "contact@poseidongeodynamics.com",
-        "image": "https://poseidongeodynamics.com/assets/og-image.jpg",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "https://poseidongeodynamics.com/assets/poseidon-white.png"
-        },
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "929 Division Street",
-            "addressLocality": "Biloxi",
-            "addressRegion": "MS",
-            "postalCode": "39530",
-            "addressCountry": "US"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 30.3960,
-            "longitude": -88.8853
-        },
-        "areaServed": {
-            "@type": "GeoCircle",
-            "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 30.3960, "longitude": -88.8853 },
-            "geoRadius": "200 mi"
-        },
-        "naics": "238190",
-        "priceRange": "$$",
-        "foundingDate": "2026",
-        "numberOfEmployees": { "@type": "QuantitativeValue", "minValue": 2, "maxValue": 10 }
-    }
-    </script>
-
-    <!-- Structured Data: Organization -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Poseidon Geodynamics LLC",
-        "url": "https://poseidongeodynamics.com",
-        "logo": "https://poseidongeodynamics.com/assets/poseidon-white.png",
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+1-305-504-1323",
-            "contactType": "Sales",
-            "email": "contact@poseidongeodynamics.com",
-            "availableLanguage": "English"
+    <!-- Tailwind CSS (CDN) & Configuration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'ocean-deep': '#1a3a5c',
+              'gold': '#c9a84c',
+              'teal': '#2da8a0',
+              'charcoal': '#1e1e2e',
+              'off-white': '#f7f8fa',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            }
+          }
         }
-    }
+      }
     </script>
+    <style>
+        /* Custom physics canvas overlay if needed */
+        #physics-canvas {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
+    </style>
 </head>
-<body>
+<body class="font-sans bg-charcoal text-off-white antialiased selection:bg-teal selection:text-white flex flex-col min-h-screen">
 
     <!-- ─── Navigation ─── -->
-    <nav class="nav">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <img src="assets/poseidon-white.png" alt="Poseidon Geodynamics — Engineered Foundations" class="nav-logo-img">
+    <nav class="fixed w-full z-50 bg-charcoal/90 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex-shrink-0">
+                <img src="assets/poseidon-white.png" alt="Poseidon Geodynamics" class="h-12 w-auto hover:opacity-80 transition-opacity">
             </a>
-            <div class="nav-links">
-                <a href="about.html">About</a>
-                <a href="services.html">Services</a>
-                <a href="products.html">Products</a>
-                <a href="calculator.html">Calculator</a>
-                <a href="blog.html">Resources</a>
-                <a href="contact.html">Contact</a>
+            <div class="hidden md:flex items-center gap-6">
+                <a href="about.html" class="text-gray-300 hover:text-white font-medium transition-colors">About</a>
+                <a href="services.html" class="text-gray-300 hover:text-white font-medium transition-colors">Services</a>
+                <a href="products.html" class="text-gray-300 hover:text-white font-medium transition-colors">Products</a>
+                <a href="calculator.html" class="text-gray-300 hover:text-white font-medium transition-colors">Calculator</a>
+                <a href="blog.html" class="text-gray-300 hover:text-white font-medium transition-colors">Resources</a>
+                <a href="contact.html" class="text-gray-300 hover:text-white font-medium transition-colors">Contact</a>
             </div>
-            <div class="nav-cta">
-                <a href="contact.html" class="btn btn-primary btn-sm">Get a Quote</a>
+            <div class="hidden md:block">
+                <a href="contact.html" class="bg-teal hover:bg-[#39ccc3] text-charcoal px-5 py-2.5 rounded-lg font-semibold transition-all shadow-lg shadow-teal/20 hover:-translate-y-0.5">Get a Quote</a>
             </div>
-            <button class="mobile-menu" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
         </div>
     </nav>
 
-
     <!-- ─── Hero Section ─── -->
-    <section class="hero">
-        <div class="hero-watermark">
-            <img src="assets/poseidon-white.png" alt="">
+    <section class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden bg-gradient-to-br from-charcoal to-[#151522]">
+        <!-- Watermark -->
+        <div class="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none">
+            <img src="assets/poseidon-white.png" alt="" class="w-3/4 max-w-4xl blur-[1px]">
         </div>
         <canvas id="physics-canvas"></canvas>
-        <div class="hero-content">
-            <img src="assets/poseidon-teal.png" alt="Poseidon Geodynamics" class="hero-logo">
-            <div class="hero-label">Helical Pile Solutions</div>
-            <h1>Engineered Foundations.<br>Built to Last.</h1>
-            <div class="hero-formula">Q<sub>u</sub> = K<sub>t</sub> &times; T</div>
-            <p class="lead" style="margin: 0 auto 16px;">Helical pile manufacturing, installation, and foundation engineering for the Gulf Coast and beyond.</p>
-
-            <div style="display: flex; gap: 12px; justify-content: center; margin-bottom: 32px; flex-wrap: wrap;">
-                <button id="gravity-btn" class="gravity-btn">Activate Gravity</button>
-                <button id="float-btn" class="gravity-btn">Float</button>
+        
+        <div class="relative z-10 text-center max-w-4xl mx-auto px-6 pt-12 pb-24">
+            <img src="assets/poseidon-teal.png" alt="Poseidon Geodynamics Logo" class="w-64 md:w-80 mx-auto mb-8 drop-shadow-[0_0_40px_rgba(45,168,160,0.3)] animate-[bounce_4s_infinite]">
+            
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-teal/30 bg-teal/10 text-teal text-xs font-mono tracking-widest uppercase mb-8">
+                <span class="w-1.5 h-1.5 rounded-full bg-teal animate-pulse"></span>
+                Helical Pile Solutions
             </div>
-
-            <div class="hero-actions">
-                <a href="services.html" class="btn btn-dark btn-lg">Our Services</a>
-                <a href="contact.html" class="btn btn-primary btn-lg">Get a Quote</a>
+            
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight">
+                Engineered Foundations.<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-teal to-gold">Built to Last.</span>
+            </h1>
+            
+            <div class="font-mono text-2xl md:text-3xl text-gold font-medium mb-8 tracking-wide">
+                Q<sub>u</sub> = K<sub>t</sub> &times; T
+            </div>
+            
+            <p class="text-xl text-gray-400 font-light max-w-2xl mx-auto mb-10">
+                Helical pile manufacturing, installation, and foundation engineering for the Gulf Coast and beyond.
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="services.html" class="px-8 py-4 rounded-lg font-semibold bg-white/10 hover:bg-white/20 border border-white/20 transition-all hover:-translate-y-1 hover:shadow-xl">Our Services</a>
+                <a href="contact.html" class="px-8 py-4 rounded-lg font-semibold bg-teal hover:bg-[#39ccc3] text-charcoal transition-all shadow-lg shadow-teal/30 hover:-translate-y-1">Get a Quote</a>
             </div>
         </div>
     </section>
-
 
     <!-- ─── Stats Bar ─── -->
-    <section class="stats-bar">
-        <div class="container">
-            <div class="stats-grid stagger">
-                <div class="stat">
-                    <div class="stat-value"><span data-count="160" data-suffix=" kip">0 kip</span></div>
-                    <div class="stat-label">Max Capacity</div>
+    <section class="border-y border-white/10 bg-[#171724] py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="font-mono text-3xl md:text-4xl font-bold text-ocean-deep mb-2">160 kip</div>
+                    <div class="text-sm font-medium text-gray-400">Max Capacity</div>
                 </div>
-                <div class="stat">
-                    <div class="stat-value"><span class="gold" data-count="30" data-suffix="-50%">0%</span></div>
-                    <div class="stat-label">Cost Savings vs Traditional</div>
+                <div>
+                    <div class="font-mono text-3xl md:text-4xl font-bold text-gold mb-2">30-50%</div>
+                    <div class="text-sm font-medium text-gray-400">Cost Savings</div>
                 </div>
-                <div class="stat">
-                    <div class="stat-value" style="font-size: clamp(1rem, 2vw, 1.5rem);">ICC-ES AC358</div>
-                    <div class="stat-label">Certified Design</div>
+                <div>
+                    <div class="font-sans text-xl md:text-2xl font-bold text-white mb-2 pt-2">ICC-ES AC358</div>
+                    <div class="text-sm font-medium text-gray-400">Certified Design</div>
                 </div>
-                <div class="stat">
-                    <div class="stat-value">Zero</div>
-                    <div class="stat-label">Vibration Installation</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ─── Services ─── -->
-    <section class="section" id="services">
-        <div class="container">
-            <div class="section-header text-center">
-                <div class="section-label">What We Do</div>
-                <h2 class="section-title">Comprehensive Pile Solutions</h2>
-                <p class="section-subtitle" style="margin: 0 auto;">From design through installation, we deliver turnkey helical pile foundations with in-house manufacturing and engineering.</p>
-            </div>
-
-            <div class="grid grid-4 stagger">
-                <div class="card fade-in">
-                    <div class="card-icon">&#9881;</div>
-                    <h3>Manufacturing</h3>
-                    <p>CNC plasma cutting, robotic welding, and QC per AWS D1.1. Custom configurations for any project.</p>
-                    <a href="services.html#manufacturing" class="card-link">Learn More</a>
-                </div>
-
-                <div class="card fade-in">
-                    <div class="card-icon card-icon-blue">&#9878;</div>
-                    <h3>Installation</h3>
-                    <p>Mini to large excavator mounted drive heads. Real-time torque monitoring. Same-day verification.</p>
-                    <a href="services.html#installation" class="card-link">Learn More</a>
-                </div>
-
-                <div class="card fade-in">
-                    <div class="card-icon card-icon-gold">&#9874;</div>
-                    <h3>Engineering</h3>
-                    <p>PE-stamped designs, ICC-ES AC358 analysis, torque-to-capacity correlation, and value engineering.</p>
-                    <a href="services.html#engineering" class="card-link">Learn More</a>
-                </div>
-
-                <div class="card fade-in">
-                    <div class="card-icon">&#9000;</div>
-                    <h3>Software</h3>
-                    <p>Proprietary design tools, real-time monitoring dashboards, project portal, and BIM integration.</p>
-                    <a href="services.html#software" class="card-link">Learn More</a>
+                <div>
+                    <div class="font-mono text-3xl md:text-4xl font-bold text-teal mb-2">Zero</div>
+                    <div class="text-sm font-medium text-gray-400">Vibration Install</div>
                 </div>
             </div>
         </div>
     </section>
 
-
-    <!-- ─── Why Helical Piles ─── -->
-    <section class="section section-alt" id="comparison">
-        <div class="container">
-            <div class="section-header text-center">
-                <div class="section-label">The Advantage</div>
-                <h2 class="section-title">Why Helical Piles?</h2>
-                <p class="section-subtitle" style="margin: 0 auto;">Helical piles outperform traditional deep foundation methods across every metric that matters.</p>
+    <!-- ─── Services Cards ─── -->
+    <section class="py-24 bg-charcoal" id="services">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-teal font-mono text-xs tracking-widest uppercase px-3 py-1 bg-teal/10 border border-teal/20 rounded-md">What We Do</span>
+                <h2 class="text-4xl font-bold mt-4 mb-4">Comprehensive Pile Solutions</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">From design through installation, we deliver turnkey helical pile foundations with in-house manufacturing and engineering.</p>
             </div>
 
-            <div class="table-wrapper fade-in">
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th>Feature</th>
-                            <th>Helical Piles</th>
-                            <th>Driven Piles</th>
-                            <th>Drilled Shafts</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Installation Time</td>
-                            <td class="check">Minutes per pile</td>
-                            <td>Hours per pile</td>
-                            <td>Hours to days</td>
-                        </tr>
-                        <tr>
-                            <td>Vibration</td>
-                            <td class="check">Zero</td>
-                            <td class="cross">Severe</td>
-                            <td>Moderate</td>
-                        </tr>
-                        <tr>
-                            <td>Concrete Required</td>
-                            <td class="check">None</td>
-                            <td>None</td>
-                            <td class="cross">Large volumes</td>
-                        </tr>
-                        <tr>
-                            <td>Soil Spoils</td>
-                            <td class="check">Minimal</td>
-                            <td>Moderate</td>
-                            <td class="cross">Significant</td>
-                        </tr>
-                        <tr>
-                            <td>Immediate Loading</td>
-                            <td class="check">Yes</td>
-                            <td>Waiting period</td>
-                            <td class="cross">Cure time (7-28 days)</td>
-                        </tr>
-                        <tr>
-                            <td>All-Weather Install</td>
-                            <td class="check">Yes</td>
-                            <td>Limited</td>
-                            <td class="cross">Weather dependent</td>
-                        </tr>
-                        <tr>
-                            <td>Removable</td>
-                            <td class="check">Fully reversible</td>
-                            <td class="cross">Permanent</td>
-                            <td class="cross">Permanent</td>
-                        </tr>
-                        <tr>
-                            <td>Cost</td>
-                            <td class="check">30-50% less</td>
-                            <td>Baseline</td>
-                            <td class="cross">Highest</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Manufacturing -->
+                <div class="bg-[#252538] border border-white/10 p-8 rounded-2xl hover:-translate-y-2 hover:border-white/30 transition-all group relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-teal to-ocean-deep opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="w-14 h-14 bg-teal/10 text-teal rounded-xl flex items-center justify-center text-2xl mb-6">⚙️</div>
+                    <h3 class="text-xl font-bold mb-3">Manufacturing</h3>
+                    <p class="text-gray-400 text-sm mb-6">CNC plasma cutting, robotic welding, and QC per AWS D1.1. Custom configurations for any project.</p>
+                    <a href="services.html#manufacturing" class="text-teal font-semibold text-sm group-hover:text-[#39ccc3] flex items-center gap-2">Learn More <span>&rarr;</span></a>
+                </div>
+                <!-- Installation -->
+                <div class="bg-[#252538] border border-white/10 p-8 rounded-2xl hover:-translate-y-2 hover:border-white/30 transition-all group relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-teal to-ocean-deep opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="w-14 h-14 bg-ocean-deep/20 text-ocean-light rounded-xl flex items-center justify-center text-2xl mb-6">🏗️</div>
+                    <h3 class="text-xl font-bold mb-3">Installation</h3>
+                    <p class="text-gray-400 text-sm mb-6">Mini to large excavator mounted drive heads. Real-time torque monitoring. Same-day verification.</p>
+                    <a href="services.html#installation" class="text-teal font-semibold text-sm group-hover:text-[#39ccc3] flex items-center gap-2">Learn More <span>&rarr;</span></a>
+                </div>
+                <!-- Engineering -->
+                <div class="bg-[#252538] border border-white/10 p-8 rounded-2xl hover:-translate-y-2 hover:border-white/30 transition-all group relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-teal to-ocean-deep opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="w-14 h-14 bg-gold/10 text-gold rounded-xl flex items-center justify-center text-2xl mb-6">📐</div>
+                    <h3 class="text-xl font-bold mb-3">Engineering</h3>
+                    <p class="text-gray-400 text-sm mb-6">PE-stamped designs, ICC-ES AC358 analysis, torque-to-capacity correlation, and value engineering.</p>
+                    <a href="services.html#engineering" class="text-teal font-semibold text-sm group-hover:text-[#39ccc3] flex items-center gap-2">Learn More <span>&rarr;</span></a>
+                </div>
+                <!-- Software -->
+                <div class="bg-[#252538] border border-white/10 p-8 rounded-2xl hover:-translate-y-2 hover:border-white/30 transition-all group relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-teal to-ocean-deep opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="w-14 h-14 bg-white/5 text-white rounded-xl flex items-center justify-center text-2xl mb-6">💻</div>
+                    <h3 class="text-xl font-bold mb-3">Software</h3>
+                    <p class="text-gray-400 text-sm mb-6">Proprietary design tools, real-time monitoring dashboards, project portal, and BIM integration.</p>
+                    <a href="services.html#software" class="text-teal font-semibold text-sm group-hover:text-[#39ccc3] flex items-center gap-2">Learn More <span>&rarr;</span></a>
+                </div>
             </div>
         </div>
     </section>
 
-
-    <!-- ─── Pricing Teaser ─── -->
-    <section class="section" id="pricing">
-        <div class="container">
-            <div class="section-header text-center">
-                <div class="section-label section-label-gold">Transparent Pricing</div>
-                <h2 class="section-title">No Surprises. Real Numbers.</h2>
-                <p class="section-subtitle" style="margin: 0 auto;">We believe in open pricing. Here's what helical pile projects typically cost.</p>
+    <!-- ─── New: Featured Projects Gallery ─── -->
+    <section class="py-24 bg-[#171724]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">Featured Projects</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">See how our helical piles provide solid foundations across residential and industrial applications.</p>
             </div>
-
-            <div class="grid grid-3 fade-in">
-                <div class="card-flat" style="padding: 32px; text-align: center;">
-                    <div class="badge badge-teal" style="margin-bottom: 16px;">Lead Sections</div>
-                    <div class="price-highlight">$200 &ndash; $1,200</div>
-                    <p style="font-size: 0.875rem; color: var(--text-muted); margin-top: 8px;">per pile, based on shaft size</p>
-                </div>
-                <div class="card-flat" style="padding: 32px; text-align: center;">
-                    <div class="badge badge-gold" style="margin-bottom: 16px;">Installation</div>
-                    <div class="price-highlight">$250 &ndash; $500</div>
-                    <p style="font-size: 0.875rem; color: var(--text-muted); margin-top: 8px;">per pile, labor included</p>
-                </div>
-                <div class="card-flat" style="padding: 32px; text-align: center;">
-                    <div class="badge badge-blue" style="margin-bottom: 16px;">Extensions</div>
-                    <div class="price-highlight">$80 &ndash; $300</div>
-                    <p style="font-size: 0.875rem; color: var(--text-muted); margin-top: 8px;">per extension, 5' to 7'</p>
-                </div>
-            </div>
-
-            <div class="text-center mt-5">
-                <a href="products.html" class="btn btn-secondary">View Full Pricing</a>
-                <a href="calculator.html" class="btn btn-primary" style="margin-left: 16px;">Try the Calculator</a>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ─── About Teaser ─── -->
-    <section class="section section-alt">
-        <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
-                <div class="fade-in">
-                    <div class="section-label">Who We Are</div>
-                    <h2 class="section-title">Gulf Coast Expertise.<br>Engineering Precision.</h2>
-                    <p style="margin-bottom: 24px;">Poseidon Geodynamics is a helical pile manufacturing and installation company headquartered in Biloxi, Mississippi. Founded by engineers who understand Gulf Coast soils &mdash; sandy loam, clay, and expansive soils &mdash; we deliver foundations that perform.</p>
-                    <p style="margin-bottom: 32px;">We combine in-house manufacturing with proprietary design software to offer turnkey deep foundation solutions at 30-50% less than traditional methods.</p>
-                    <a href="about.html" class="btn btn-secondary">About Poseidon</a>
-                </div>
-                <div class="fade-in about-logo-showcase">
-                    <img src="assets/poseidon-gold.png" alt="Poseidon Geodynamics — Engineered Foundations">
-                    <div class="formula-display" style="margin-top: 32px; font-size: clamp(1rem, 2vw, 1.5rem);">
-                        Q<sub>u</sub> = K<sub>t</sub> &times; T
+            <!-- Placeholder grid for project photos -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="aspect-[4/3] rounded-xl bg-charcoal border border-white/10 flex items-center justify-center text-gray-500 overflow-hidden group">
+                    <div class="p-6 text-center group-hover:scale-105 transition-transform duration-500">
+                        <span class="block text-4xl mb-2">🏖️</span>
+                        <h4 class="font-bold text-white mb-1">Coastal Home Elevation</h4>
+                        <p class="text-sm">Biloxi, MS</p>
                     </div>
-                    <p style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--text-muted); margin: 12px auto 0;">Torque-to-Capacity Correlation<br>ICC-ES AC358 &bull; The foundation of every pile we install</p>
+                </div>
+                <div class="aspect-[4/3] rounded-xl bg-charcoal border border-white/10 flex items-center justify-center text-gray-500 overflow-hidden group">
+                    <div class="p-6 text-center group-hover:scale-105 transition-transform duration-500">
+                        <span class="block text-4xl mb-2">⚡</span>
+                        <h4 class="font-bold text-white mb-1">Transmission Tower</h4>
+                        <p class="text-sm">Gulfport, MS</p>
+                    </div>
+                </div>
+                <div class="aspect-[4/3] rounded-xl bg-charcoal border border-white/10 flex items-center justify-center text-gray-500 overflow-hidden group">
+                    <div class="p-6 text-center group-hover:scale-105 transition-transform duration-500">
+                        <span class="block text-4xl mb-2">☀️</span>
+                        <h4 class="font-bold text-white mb-1">Solar Array Anchor</h4>
+                        <p class="text-sm">Mobile, AL</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-
-    <!-- ─── CTA Section ─── -->
-    <section class="cta-section">
-        <div class="container" style="position: relative;">
-            <div class="cta-watermark">
-                <img src="assets/poseidon-gold.png" alt="">
-            </div>
-            <h2>Ready to Build on Solid Ground?</h2>
-            <p>Contact us for a free project assessment and quote. We respond within 24 hours.</p>
-            <div class="btn-group">
-                <a href="contact.html" class="btn btn-white btn-lg">Get a Quote</a>
-                <a href="calculator.html" class="btn btn-outline-white btn-lg">Try the Calculator</a>
-            </div>
+    <!-- ─── Calculator CTA ─── -->
+    <section class="py-24 bg-ocean-deep relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxjaXJjbGUgY3g9IjMiIGN5PSIzIiByPSIzIiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz48L2c+PC9zdmc+')] opacity-50"></div>
+        <div class="max-w-5xl mx-auto px-6 relative z-10 text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">Interactive Pile Calculator</h2>
+            <p class="text-xl text-ocean-light mb-10 max-w-2xl mx-auto">Input your design load and soil type to instantly estimate recommended piles, torque requirements, and project costs.</p>
+            <a href="calculator.html" class="inline-flex items-center gap-3 px-8 py-4 bg-gold hover:bg-gold-bright text-charcoal font-bold rounded-lg shadow-xl shadow-gold/20 transition-all hover:-translate-y-1">
+                Try the Calculator Now
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
         </div>
     </section>
 
+    <!-- ─── New: Testimonials ─── -->
+    <section class="py-24 bg-charcoal">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-gold font-mono text-xs tracking-widest uppercase px-3 py-1 bg-gold/10 border border-gold/20 rounded-md">Testimonials</span>
+                <h2 class="text-4xl font-bold mt-4">Trusted by Gulf Coast Builders</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-[#252538] p-8 rounded-2xl border border-white/5 relative">
+                    <div class="text-gold text-4xl absolute top-4 left-6 opacity-20">"</div>
+                    <p class="text-gray-300 relative z-10 italic mb-6 mt-4">"Poseidon's helical piles saved us weeks on our latest commercial build. The lack of concrete curing time and zero vibration meant we could keep the rest of the site active."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-ocean-deep rounded-full flex items-center justify-center font-bold text-sm">MC</div>
+                        <div>
+                            <div class="font-bold text-white text-sm">Michael C.</div>
+                            <div class="text-xs text-gray-400">General Contractor</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-[#252538] p-8 rounded-2xl border border-white/5 relative">
+                    <div class="text-gold text-4xl absolute top-4 left-6 opacity-20">"</div>
+                    <p class="text-gray-300 relative z-10 italic mb-6 mt-4">"Yuri and Jarrod understand Gulf Coast soils better than anyone. Their engineering support and real-time installation logs gave our inspectors total confidence."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-teal rounded-full flex items-center justify-center font-bold text-sm text-charcoal">SJ</div>
+                        <div>
+                            <div class="font-bold text-white text-sm">Sarah J.</div>
+                            <div class="text-xs text-gray-400">Structural Engineer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- ─── Footer ─── -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="index.html">
-                        <img src="assets/poseidon-white.png" alt="Poseidon Geodynamics" class="footer-logo-img">
+    <footer class="bg-[#151522] border-t border-white/10 pt-20 pb-10 mt-auto">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="md:col-span-1">
+                    <a href="index.html" class="block mb-4">
+                        <img src="assets/poseidon-white.png" alt="Poseidon Geodynamics" class="h-10 w-auto">
                     </a>
-                    <p>Helical pile manufacturing, installation, and foundation engineering for the Gulf Coast and beyond.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Helical pile manufacturing, installation, and foundation engineering for the Gulf Coast and beyond.</p>
                 </div>
-
                 <div>
-                    <h4>Services</h4>
-                    <div class="footer-links">
-                        <a href="services.html#manufacturing">Manufacturing</a>
-                        <a href="services.html#installation">Installation</a>
-                        <a href="services.html#engineering">Engineering</a>
-                        <a href="services.html#software">Software &amp; Tech</a>
-                    </div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Services</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="services.html#manufacturing" class="hover:text-teal transition-colors">Manufacturing</a></li>
+                        <li><a href="services.html#installation" class="hover:text-teal transition-colors">Installation</a></li>
+                        <li><a href="services.html#engineering" class="hover:text-teal transition-colors">Engineering</a></li>
+                        <li><a href="services.html#software" class="hover:text-teal transition-colors">Software & Tech</a></li>
+                    </ul>
                 </div>
-
                 <div>
-                    <h4>Resources</h4>
-                    <div class="footer-links">
-                        <a href="products.html">Products &amp; Pricing</a>
-                        <a href="calculator.html">Pile Calculator</a>
-                        <a href="blog.html">Blog</a>
-                        <a href="about.html">About Us</a>
-                    </div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Resources</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="products.html" class="hover:text-teal transition-colors">Products & Pricing</a></li>
+                        <li><a href="calculator.html" class="hover:text-teal transition-colors">Pile Calculator</a></li>
+                        <li><a href="blog.html" class="hover:text-teal transition-colors">Blog</a></li>
+                        <li><a href="about.html" class="hover:text-teal transition-colors">About Us</a></li>
+                    </ul>
                 </div>
-
                 <div>
-                    <h4>Contact</h4>
-                    <div class="footer-links">
-                        <a href="tel:+13055041323">(305) 504-1323</a>
-                        <a href="mailto:contact@poseidongeodynamics.com">contact@poseidongeodynamics.com</a>
-                        <a href="https://maps.google.com/?q=929+Division+Street+Biloxi+MS" target="_blank" rel="noopener">929 Division Street<br>Biloxi, MS 39530</a>
-                    </div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Contact</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="tel:+13055041323" class="hover:text-teal transition-colors flex items-center gap-2">📞 (305) 504-1323</a></li>
+                        <li><a href="mailto:contact@poseidongeodynamics.com" class="hover:text-teal transition-colors flex items-center gap-2">✉️ contact@...</a></li>
+                        <li class="flex items-start gap-2">
+                            <span>📍</span>
+                            <a href="https://maps.google.com/?q=929+Division+Street+Biloxi+MS" target="_blank" rel="noopener" class="hover:text-teal transition-colors">929 Division Street<br>Biloxi, MS 39530</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-
-            <div class="footer-bottom">
-                <p>&copy; <span data-year></span> Poseidon Geodynamics LLC. All rights reserved.</p>
-                <div class="footer-bottom-links">
-                    <a href="sitemap.xml">Sitemap</a>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+                <p>&copy; 2026 Poseidon Geodynamics LLC. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="sitemap.xml" class="hover:text-white transition-colors">Sitemap</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="assets/js/physics.js"></script>
-    <script src="assets/js/main.js"></script>
 </body>
 </html>
