@@ -1,26 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
+    <!-- Encoding & Viewport -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Title & Description -->
     <title>Poseidon Geodynamics — Engineered Helical Pile Foundations</title>
     <meta name="description" content="Poseidon Geodynamics manufactures and installs helical pile foundations for residential, commercial, and industrial projects across the Gulf Coast. 30-50% cost savings vs traditional deep foundations.">
     <meta name="keywords" content="helical piles, screw piles, foundation engineering, Biloxi Mississippi, Gulf Coast, deep foundations, helical pile manufacturer">
 
+    <!-- SEO & Robots -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="language" content="en-US">
+    <meta name="author" content="Poseidon Geodynamics LLC">
+    <link rel="canonical" href="https://poseidongeodynamics.com/">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- Web Manifest & Browser Config -->
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#0d1b2a">
+    <meta name="color-scheme" content="dark light">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    <meta name="msapplication-TileColor" content="#0d1b2a">
+    <meta name="msapplication-TileImage" content="/assets/mstile-144x144.png">
+
+    <!-- Apple Mobile -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Poseidon">
+    <meta name="format-detection" content="telephone=yes">
+
     <!-- Open Graph -->
+    <meta property="og:type" content="business.business">
     <meta property="og:title" content="Poseidon Geodynamics — Engineered Helical Pile Foundations">
     <meta property="og:description" content="Helical pile manufacturing, installation, and foundation engineering for the Gulf Coast and beyond. 30-50% cost savings vs traditional deep foundations.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://poseidongeodynamics.com">
-    <meta property="og:image" content="https://poseidongeodynamics.com/assets/poseidon.jpg">
+    <meta property="og:url" content="https://poseidongeodynamics.com/">
+    <meta property="og:image" content="https://poseidongeodynamics.com/assets/og-image.jpg">
+    <meta property="og:image:alt" content="Poseidon Geodynamics trident logo — Engineered Foundations">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Poseidon Geodynamics">
+    <meta property="og:locale" content="en_US">
 
-    <!-- Twitter -->
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Poseidon Geodynamics — Engineered Helical Pile Foundations">
-    <meta name="twitter:description" content="Helical pile manufacturing, installation, and foundation engineering for the Gulf Coast.">
-
-    <!-- Canonical -->
-    <link rel="canonical" href="https://poseidongeodynamics.com">
+    <meta name="twitter:description" content="Helical pile manufacturing, installation, and foundation engineering for the Gulf Coast. 30-50% cost savings.">
+    <meta name="twitter:image" content="https://poseidongeodynamics.com/assets/og-image.jpg">
+    <meta name="twitter:image:alt" content="Poseidon Geodynamics trident logo — Engineered Foundations">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,16 +65,21 @@
     <!-- Styles -->
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <!-- Structured Data -->
+    <!-- Structured Data: HomeAndConstructionBusiness -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "LocalBusiness",
+        "@type": "HomeAndConstructionBusiness",
         "name": "Poseidon Geodynamics LLC",
-        "description": "Helical pile manufacturing, installation, and foundation engineering",
+        "description": "Helical pile manufacturing, installation, and foundation engineering for residential, commercial, and industrial applications.",
         "url": "https://poseidongeodynamics.com",
         "telephone": "+1-305-504-1323",
         "email": "contact@poseidongeodynamics.com",
+        "image": "https://poseidongeodynamics.com/assets/og-image.jpg",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://poseidongeodynamics.com/assets/poseidon-white.png"
+        },
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "929 Division Street",
@@ -47,6 +87,11 @@
             "addressRegion": "MS",
             "postalCode": "39530",
             "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 30.3960,
+            "longitude": -88.8853
         },
         "areaServed": {
             "@type": "GeoCircle",
@@ -59,6 +104,24 @@
         "numberOfEmployees": { "@type": "QuantitativeValue", "minValue": 2, "maxValue": 10 }
     }
     </script>
+
+    <!-- Structured Data: Organization -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Poseidon Geodynamics LLC",
+        "url": "https://poseidongeodynamics.com",
+        "logo": "https://poseidongeodynamics.com/assets/poseidon-white.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-305-504-1323",
+            "contactType": "Sales",
+            "email": "contact@poseidongeodynamics.com",
+            "availableLanguage": "English"
+        }
+    }
+    </script>
 </head>
 <body>
 
@@ -66,11 +129,7 @@
     <nav class="nav">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">
-                <img src="assets/poseidon.jpg" alt="Poseidon Geodynamics" width="40" height="29">
-                <div class="nav-logo-text">
-                    Poseidon
-                    <span>Geodynamics</span>
-                </div>
+                <img src="assets/poseidon-white.png" alt="Poseidon Geodynamics — Engineered Foundations" class="nav-logo-img">
             </a>
             <div class="nav-links">
                 <a href="about.html">About</a>
@@ -94,8 +153,12 @@
 
     <!-- ─── Hero Section ─── -->
     <section class="hero">
+        <div class="hero-watermark">
+            <img src="assets/poseidon-white.png" alt="">
+        </div>
         <canvas id="physics-canvas"></canvas>
         <div class="hero-content">
+            <img src="assets/poseidon-teal.png" alt="Poseidon Geodynamics" class="hero-logo">
             <div class="hero-label">Helical Pile Solutions</div>
             <h1>Engineered Foundations.<br>Built to Last.</h1>
             <div class="hero-formula">Q<sub>u</sub> = K<sub>t</sub> &times; T</div>
@@ -302,11 +365,12 @@
                     <p style="margin-bottom: 32px;">We combine in-house manufacturing with proprietary design software to offer turnkey deep foundation solutions at 30-50% less than traditional methods.</p>
                     <a href="about.html" class="btn btn-secondary">About Poseidon</a>
                 </div>
-                <div class="fade-in" style="background: var(--bg-subtle); border: 1px solid var(--border); border-radius: 20px; padding: 48px; text-align: center;">
-                    <div class="formula-display" style="margin-bottom: 32px;">
+                <div class="fade-in about-logo-showcase">
+                    <img src="assets/poseidon-gold.png" alt="Poseidon Geodynamics — Engineered Foundations">
+                    <div class="formula-display" style="margin-top: 32px; font-size: clamp(1rem, 2vw, 1.5rem);">
                         Q<sub>u</sub> = K<sub>t</sub> &times; T
                     </div>
-                    <p style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--text-muted); margin: 0 auto;">Torque-to-Capacity Correlation<br>ICC-ES AC358 &bull; The foundation of every pile we install</p>
+                    <p style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--text-muted); margin: 12px auto 0;">Torque-to-Capacity Correlation<br>ICC-ES AC358 &bull; The foundation of every pile we install</p>
                 </div>
             </div>
         </div>
@@ -316,6 +380,9 @@
     <!-- ─── CTA Section ─── -->
     <section class="cta-section">
         <div class="container" style="position: relative;">
+            <div class="cta-watermark">
+                <img src="assets/poseidon-gold.png" alt="">
+            </div>
             <h2>Ready to Build on Solid Ground?</h2>
             <p>Contact us for a free project assessment and quote. We respond within 24 hours.</p>
             <div class="btn-group">
@@ -331,11 +398,8 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="index.html" class="nav-logo">
-                        <div class="nav-logo-text">
-                            Poseidon
-                            <span>Geodynamics</span>
-                        </div>
+                    <a href="index.html">
+                        <img src="assets/poseidon-white.png" alt="Poseidon Geodynamics" class="footer-logo-img">
                     </a>
                     <p>Helical pile manufacturing, installation, and foundation engineering for the Gulf Coast and beyond.</p>
                 </div>
