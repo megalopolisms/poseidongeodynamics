@@ -14,7 +14,7 @@
     // Physics constants
     const SPRING = 0.08; 
     const DAMPING = 0.92;
-    const PARTICLE_SIZE = 1.8;
+    const PARTICLE_SIZE = 1.4;
     const SPACING = 4;
 
     // Load Image
@@ -34,7 +34,7 @@
         const offscreen = document.createElement("canvas");
         const offCtx = offscreen.getContext("2d");
         
-        const sampleSize = 100; 
+        const sampleSize = 55; 
         const aspect = img.height / img.width;
         
         offscreen.width = sampleSize;
