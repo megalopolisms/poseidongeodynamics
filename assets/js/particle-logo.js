@@ -84,7 +84,10 @@
                         vx: 0,
                         vy: 0,
                         phase: randomPhase,
-                        color: `rgba(${r}, ${g}, ${b}, ${alpha / 255})`
+                        r: r,
+                        g: g,
+                        b: b,
+                        baseAlpha: alpha / 255
                     });
                 }
             }
@@ -157,8 +160,9 @@
             p.x += p.vx;
             p.y += p.vy;
 
-            // Render
-            ctx.fillStyle = p.color;
+            // Render with dynamic back-and-forth glow
+            let glowAlpha = Math.max(0, p.baseAlpha * (0.3 + 0.7 * Math.sin(time * 3 + p.phase)));
+            ctx.fillStyle = `rgba(${p.r}, ${p.g}, ${p.b}, ${glowAlpha})`;
             ctx.beginPath();
             ctx.arc(p.x, p.y, PARTICLE_SIZE, 0, Math.PI * 2);
             ctx.fill();
