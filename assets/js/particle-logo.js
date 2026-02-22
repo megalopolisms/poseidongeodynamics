@@ -17,10 +17,10 @@
     let mouse = { x: -1000, y: -1000, radius: 40 };
 
     // Physics constants
-    const SPRING = 0.05;
-    const DAMPING = 0.85;
-    const GRAVITY = 0.6;
-    const BOUNCE = -0.5;
+    const SPRING = 0.08;
+    const DAMPING = 0.90;
+    const GRAVITY = 0.8;
+    const BOUNCE = -0.75;
     const PARTICLE_SIZE = 1.5;
     const SPACING = 4; // grid spacing for pixel sampling
 
@@ -137,8 +137,8 @@
 
             // Scatter on drop
             particles.forEach(p => {
-                p.vx += (Math.random() - 0.5) * 10;
-                p.vy += Math.random() * -5;
+                p.vx += (Math.random() - 0.5) * 30;
+                p.vy += Math.random() * -15;
             });
         });
     }
@@ -195,7 +195,7 @@
             if (dist < mouse.radius) {
                 let force = (mouse.radius - dist) / mouse.radius;
                 // Stronger repulsion if gravity is off to maintain shape disturbance
-                let repelStrength = gravityOn ? 2 : 15; 
+                let repelStrength = gravityOn ? 5 : 25; 
                 p.vx += (mdx / dist) * force * repelStrength;
                 p.vy += (mdy / dist) * force * repelStrength;
             }
