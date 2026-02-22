@@ -42,6 +42,15 @@
             fontFamily: {
               sans: ['Inter', 'sans-serif'],
               mono: ['JetBrains Mono', 'monospace'],
+            },
+            keyframes: {
+              nuclearGlow: {
+                '0%, 100%': { filter: 'drop-shadow(0 0 10px rgba(45,212,191,0.3))' },
+                '50%': { filter: 'drop-shadow(0 0 30px rgba(45,212,191,0.8)) drop-shadow(0 0 60px rgba(45,212,191,0.5)) drop-shadow(0 0 90px rgba(201,168,76,0.3))' },
+              }
+            },
+            animation: {
+              'nuclear-glow': 'nuclearGlow 4s ease-in-out infinite',
             }
           }
         }
@@ -102,7 +111,7 @@
                     <!-- Particle Canvas Background -->
                     <canvas id="logo-canvas" class="absolute inset-0 w-full h-full cursor-crosshair drop-shadow-[0_0_40px_rgba(45,212,191,0.6)]"></canvas>
                     <!-- Crisp Static Logo Foreground -->
-                    <img src="assets/poseidon-teal.png" alt="Poseidon Geodynamics Logo" class="relative z-10 w-full h-auto object-contain pointer-events-none">
+                    <img src="assets/poseidon-teal.png" alt="Poseidon Geodynamics Logo" class="relative z-10 w-full h-auto object-contain pointer-events-none animate-nuclear-glow">
                 </div>
             </div>
             
