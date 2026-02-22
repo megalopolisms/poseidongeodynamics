@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helical Pile Calculator — Poseidon Geodynamics</title>
+    <meta name="description" content="Free helical pile calculator with ICC-ES AC358 torque-to-capacity analysis and project cost estimator. Get instant pile recommendations and pricing.">
+
+    <meta property="og:title" content="Helical Pile Calculator — Poseidon Geodynamics">
+    <meta property="og:description" content="Free helical pile calculator with ICC-ES AC358 analysis and transparent pricing.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://poseidongeodynamics.com/calculator.html">
+
+    <link rel="canonical" href="https://poseidongeodynamics.com/calculator.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- ─── Navigation ─── -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/poseidon.jpg" alt="Poseidon Geodynamics" width="40" height="29">
+                <div class="nav-logo-text">
+                    Poseidon
+                    <span>Geodynamics</span>
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="products.html">Products</a>
+                <a href="calculator.html" class="active">Calculator</a>
+                <a href="blog.html">Resources</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="nav-cta">
+                <a href="contact.html" class="btn btn-primary btn-sm">Get a Quote</a>
+            </div>
+            <button class="mobile-menu" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+
+    <!-- ─── Page Header ─── -->
+    <div class="page-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span class="current">Calculator</span>
+            </div>
+            <h1>Helical Pile Calculator</h1>
+            <p>ICC-ES AC358 torque-to-capacity analysis with project cost estimator.</p>
+        </div>
+    </div>
+
+
+    <!-- ─── Calculator ─── -->
+    <section class="section">
+        <div class="container">
+            <!-- Formula Display -->
+            <div class="text-center mb-5">
+                <div class="formula-display">
+                    Q<sub>u</sub> = K<sub>t</sub> &times; T
+                    <span style="display: block; font-size: 0.75rem; color: var(--text-muted); margin-top: 8px;">Ultimate Capacity = Torque Factor &times; Installation Torque</span>
+                </div>
+            </div>
+
+            <div class="calc-container">
+                <!-- Mode Toggle -->
+                <div class="mode-toggle">
+                    <button class="mode-btn active" id="mode-design">Design Mode</button>
+                    <button class="mode-btn" id="mode-verify">Verification Mode</button>
+                </div>
+
+                <form id="calc-form">
+                    <div class="calc-grid">
+                        <!-- ─── Input Side ─── -->
+                        <div>
+                            <h3 style="margin-bottom: 24px; font-size: 1.125rem;">Input Parameters</h3>
+
+                            <div class="calc-input-group">
+                                <label class="calc-label">Design Load (kips)</label>
+                                <input type="number" id="calc-load" class="calc-input" value="25" min="1" max="160" step="1">
+                                <input type="range" id="calc-load-slider" class="calc-slider" min="1" max="160" value="25">
+                                <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">
+                                    <span>1 kip</span>
+                                    <span>160 kips</span>
+                                </div>
+                            </div>
+
+                            <div class="calc-input-group">
+                                <label class="calc-label">Factor of Safety</label>
+                                <select id="calc-fos" class="calc-select">
+                                    <option value="1.5">1.5 — Temporary Structures</option>
+                                    <option value="2.0" selected>2.0 — Standard Structures</option>
+                                    <option value="2.5">2.5 — Critical Structures</option>
+                                </select>
+                            </div>
+
+                            <div class="calc-input-group">
+                                <label class="calc-label">Shaft Size</label>
+                                <select id="calc-shaft" class="calc-select">
+                                    <!-- Populated by JS -->
+                                </select>
+                            </div>
+
+                            <div class="calc-input-group">
+                                <label class="calc-label">Number of Piles</label>
+                                <input type="number" id="calc-count" class="calc-input" value="10" min="1" max="500" step="1">
+                            </div>
+
+                            <div class="calc-input-group">
+                                <label class="calc-label">Estimated Depth (ft)</label>
+                                <input type="number" id="calc-depth" class="calc-input" value="20" min="5" max="100" step="1">
+                                <input type="range" id="calc-depth-slider" class="calc-slider" min="5" max="100" value="20">
+                                <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">
+                                    <span>5 ft</span>
+                                    <span>100 ft</span>
+                                </div>
+                            </div>
+
+                            <!-- Verification Mode Only -->
+                            <div class="calc-input-group" id="torque-field" style="display: none;">
+                                <label class="calc-label">Installation Torque (ft-lbs)</label>
+                                <input type="number" id="calc-torque" class="calc-input" value="" min="0" max="50000" step="100" placeholder="Enter actual torque reading">
+                                <div class="form-hint">Actual field torque for capacity verification</div>
+                            </div>
+                        </div>
+
+                        <!-- ─── Results Side ─── -->
+                        <div>
+                            <h3 style="margin-bottom: 24px; font-size: 1.125rem;">Results</h3>
+
+                            <div class="calc-results">
+                                <h4 style="font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 16px;">Engineering Analysis</h4>
+
+                                <div class="calc-result-item">
+                                    <span class="calc-result-label">Required Ultimate Capacity</span>
+                                    <span class="calc-result-value" id="res-ultimate">50.0 kips</span>
+                                </div>
+
+                                <div class="calc-result-item">
+                                    <span class="calc-result-label">Required Installation Torque</span>
+                                    <span class="calc-result-value teal" id="res-torque">5,000 ft-lbs</span>
+                                </div>
+
+                                <div class="calc-result-item">
+                                    <span class="calc-result-label">Recommended Pile</span>
+                                    <span class="calc-result-value" id="res-shaft">RS2875 — 2.875" Round</span>
+                                </div>
+
+                                <div class="calc-result-item">
+                                    <span class="calc-result-label">K<sub>t</sub> Factor</span>
+                                    <span class="calc-result-value" id="res-kt">10 ft⁻¹</span>
+                                </div>
+
+                                <div class="calc-result-item">
+                                    <span class="calc-result-label">Max Torque for Shaft</span>
+                                    <span class="calc-result-value" id="res-max-torque">10,000 ft-lbs</span>
+                                </div>
+
+                                <div class="calc-result-item">
+                                    <span class="calc-result-label">Design Status</span>
+                                    <span class="calc-result-value pass" id="res-status">PASS</span>
+                                </div>
+
+                                <!-- Verification result (hidden by default) -->
+                                <div class="calc-result-item" id="verification-row" style="display: none;">
+                                    <span class="calc-result-label">Verification</span>
+                                    <span class="calc-result-value" id="res-verification">Enter torque value</span>
+                                </div>
+                            </div>
+
+                            <div class="calc-results" style="margin-top: 20px;">
+                                <h4 style="font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 16px;">Cost Estimate</h4>
+
+                                <div class="calc-result-item">
+                                    <span class="calc-result-label">Materials (piles + ext + brackets)</span>
+                                    <span class="calc-result-value" id="res-material">$5,150</span>
+                                </div>
+
+                                <div class="calc-result-item">
+                                    <span class="calc-result-label">Installation Labor</span>
+                                    <span class="calc-result-value" id="res-labor">$3,750</span>
+                                </div>
+
+                                <div class="calc-result-item">
+                                    <span class="calc-result-label">Mobilization</span>
+                                    <span class="calc-result-value" id="res-mob">$3,250</span>
+                                </div>
+
+                                <div class="calc-total">
+                                    <span class="calc-total-label">Estimated Total</span>
+                                    <span class="calc-total-value" id="res-total">$12,150</span>
+                                </div>
+                            </div>
+
+                            <div class="notice notice-info mt-3">
+                                <span class="notice-icon">&#9432;</span>
+                                <span>Estimates based on average pricing. Final quotes may vary based on site conditions, steel market, and project specifics. <a href="contact.html">Contact us</a> for a detailed quote.</span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ─── Reference Tables ─── -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header text-center">
+                <div class="section-label">Reference</div>
+                <h2 class="section-title">ICC-ES AC358 Torque Factors</h2>
+                <p class="section-subtitle" style="margin: 0 auto;">Standard K<sub>t</sub> values used in helical pile capacity calculations.</p>
+            </div>
+
+            <div class="table-wrapper fade-in" style="max-width: 800px; margin: 0 auto;">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Shaft Size</th>
+                            <th>Type</th>
+                            <th>K<sub>t</sub> (ft<sup>-1</sup>)</th>
+                            <th>Max Torque (ft-lbs)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1.500"</td>
+                            <td>Round / Square</td>
+                            <td class="check" style="font-family: var(--font-mono);">10</td>
+                            <td style="font-family: var(--font-mono);">5,500</td>
+                        </tr>
+                        <tr>
+                            <td>1.750"</td>
+                            <td>Square</td>
+                            <td class="check" style="font-family: var(--font-mono);">10</td>
+                            <td style="font-family: var(--font-mono);">6,500</td>
+                        </tr>
+                        <tr>
+                            <td>2.875"</td>
+                            <td>Round</td>
+                            <td class="check" style="font-family: var(--font-mono);">10</td>
+                            <td style="font-family: var(--font-mono);">10,000</td>
+                        </tr>
+                        <tr>
+                            <td>3.500"</td>
+                            <td>Round</td>
+                            <td style="font-family: var(--font-mono);">7</td>
+                            <td style="font-family: var(--font-mono);">15,000</td>
+                        </tr>
+                        <tr>
+                            <td>4.500"</td>
+                            <td>Round</td>
+                            <td style="font-family: var(--font-mono);">7</td>
+                            <td style="font-family: var(--font-mono);">20,000</td>
+                        </tr>
+                        <tr>
+                            <td>6.625"</td>
+                            <td>Round</td>
+                            <td style="font-family: var(--font-mono);">5</td>
+                            <td style="font-family: var(--font-mono);">30,000</td>
+                        </tr>
+                        <tr>
+                            <td>8.625"</td>
+                            <td>Round</td>
+                            <td style="font-family: var(--font-mono);">4</td>
+                            <td style="font-family: var(--font-mono);">40,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="text-center mt-4">
+                <p class="formula-accent">Default K<sub>t</sub> = 10 is conservative. Site-specific values established through load testing per AC358 &sect;4.2.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ─── CTA ─── -->
+    <section class="cta-section">
+        <div class="container" style="position: relative;">
+            <h2>Need a Detailed Engineering Analysis?</h2>
+            <p>Our team provides PE-stamped designs and site-specific torque correlations.</p>
+            <div class="btn-group">
+                <a href="contact.html" class="btn btn-white btn-lg">Get a Quote</a>
+                <a href="products.html" class="btn btn-outline-white btn-lg">View Products</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ─── Footer ─── -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-logo">
+                        <div class="nav-logo-text">
+                            Poseidon
+                            <span>Geodynamics</span>
+                        </div>
+                    </a>
+                    <p>Helical pile manufacturing, installation, and foundation engineering for the Gulf Coast and beyond.</p>
+                </div>
+                <div>
+                    <h4>Services</h4>
+                    <div class="footer-links">
+                        <a href="services.html#manufacturing">Manufacturing</a>
+                        <a href="services.html#installation">Installation</a>
+                        <a href="services.html#engineering">Engineering</a>
+                        <a href="services.html#software">Software &amp; Tech</a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Resources</h4>
+                    <div class="footer-links">
+                        <a href="products.html">Products &amp; Pricing</a>
+                        <a href="calculator.html">Pile Calculator</a>
+                        <a href="blog.html">Blog</a>
+                        <a href="about.html">About Us</a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <div class="footer-links">
+                        <a href="tel:+13055041323">(305) 504-1323</a>
+                        <a href="mailto:contact@poseidongeodynamics.com">contact@poseidongeodynamics.com</a>
+                        <a href="https://maps.google.com/?q=929+Division+Street+Biloxi+MS" target="_blank" rel="noopener">929 Division Street<br>Biloxi, MS 39530</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span data-year></span> Poseidon Geodynamics LLC. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="sitemap.xml">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/calculator.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
