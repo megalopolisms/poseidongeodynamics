@@ -88,7 +88,12 @@
         <canvas id="physics-canvas"></canvas>
         
         <div class="relative z-10 text-center max-w-4xl mx-auto px-6 pt-12 pb-24">
-            <img src="assets/poseidon-teal.png" alt="Poseidon Geodynamics Logo" class="w-64 md:w-80 mx-auto mb-8 drop-shadow-[0_0_40px_rgba(45,168,160,0.3)] animate-[bounce_4s_infinite]">
+            <canvas id="logo-canvas" class="w-64 h-64 md:w-80 md:h-80 mx-auto mb-6 cursor-crosshair drop-shadow-[0_0_20px_rgba(45,168,160,0.15)]"></canvas>
+            
+            <div class="flex gap-4 justify-center mb-8">
+                <button id="gravity-btn" class="px-4 py-1.5 text-sm font-mono text-gray-400 border border-white/10 rounded-full hover:text-teal hover:border-teal/30 transition-colors">Activate Gravity</button>
+                <button id="float-btn" class="px-4 py-1.5 text-sm font-mono text-teal border border-teal/30 bg-teal/10 rounded-full transition-colors">Float</button>
+            </div>
             
             <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-teal/30 bg-teal/10 text-teal text-xs font-mono tracking-widest uppercase mb-8">
                 <span class="w-1.5 h-1.5 rounded-full bg-teal animate-pulse"></span>
@@ -314,5 +319,7 @@
         </div>
     </footer>
 
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/particle-logo.js"></script>
 </body>
 </html>
